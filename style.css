@@ -1,0 +1,94 @@
+body {
+  background-color: #dedede;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+p {
+  font-size: 18px;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Mobile-first: 1 column grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+figure {
+  border: 2px solid #333;
+  padding: 10px;
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+}
+
+/* Tablet view ≥ 772px */
+@media (min-width: 772px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  figure img {
+    border-radius: 50%; /* hình tròn */
+  }
+
+  .grid figure:last-child {
+    grid-column: span 2; /* phần tử cuối chiếm 2 cột */
+  }
+}
+
+/* Large screen view ≥ 992px */
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid figure:nth-child(3n) {
+    grid-column: span 2; /* mỗi phần tử thứ 3 chiếm 2 cột */
+  }
+
+  figure img {
+    border-radius: 0; /* bỏ hình tròn */
+  }
+}
+
+/* Prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
+
+  figure {
+    background-color: #222;
+    border: 2px solid #000;
+  }
+
+  figcaption {
+    color: yellow;
+  }
+}
